@@ -8,6 +8,8 @@ public class Turret : MonoBehaviour
 
     public GameObject target;
     private bool targetLocked;
+    public GameObject firingPoint;
+
 
     public Transform castPoint;
     public float aiRange;
