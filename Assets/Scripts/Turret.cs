@@ -6,15 +6,18 @@ public class Turret : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    private GameObject target;
+    public GameObject target;
     private bool targetLocked;
 
     public Transform castPoint;
+    public float aiRange;
 
     public GameObject turret;
     public GameObject bullet;
     public float fireTimer;
     private bool shotready;
+
+
 
     private bool seen = false;
     void Start()
@@ -36,18 +39,37 @@ public class Turret : MonoBehaviour
             }
 
         }
-    }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
+        if (PlayerWithinDistance(aiRange))
         {
-            target = other.gameObject; 
-            targetLocked = true;
-        }
 
+            if (CanSeePlayer(aiRange))
+            {
+
+                Debug.Log("i seee you!");
+                turret.transform.LookAt(target.transform);
+
+            }
+
+
+        }
     }
 
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.CompareTag("Player"))
+    //    {
+    //        target = other.gameObject; 
+    //        targetLocked = true;
+    //    }
+
+    //}
+
+    /// <summary>
+    /// if the player is within the given distance
+    /// </summary>
+    /// <param name="distance"></param>
+    /// <returns></returns>
     bool PlayerWithinDistance(float distance)
     {
         if (Vector3.Distance(target.transform.position, transform.position) < distance)
@@ -57,6 +79,11 @@ public class Turret : MonoBehaviour
         return false;
     }
 
+    /// <summary>
+    /// this function is if an object with a raycast can see the player
+    /// </summary>
+    /// <param name="distance"></param>
+    /// <returns></returns>
     bool CanSeePlayer(float distance)
     {
         bool val = false;
@@ -70,6 +97,7 @@ public class Turret : MonoBehaviour
         {
             if (rayhit.collider.CompareTag("Player"))
             {
+                Debug.Log("Rays hit!");
                 return true;
             }
 
