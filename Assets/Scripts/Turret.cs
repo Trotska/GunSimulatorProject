@@ -13,6 +13,8 @@ public class Turret : MonoBehaviour
 
     public Transform castPoint;
     public float aiRange;
+    public float aiTimeToShoot;
+    private float timer;
 
     public GameObject turret;
     public GameObject bullet;
@@ -24,7 +26,7 @@ public class Turret : MonoBehaviour
     private bool seen = false;
     void Start()
     {
-        
+        timer = aiTimeToShoot;
     }
 
     // Update is called once per frame
@@ -50,10 +52,13 @@ public class Turret : MonoBehaviour
 
                 Debug.Log("i seee you!");
                 turret.transform.LookAt(target.transform);
+                if (TimerBeforeShoot())
+                    Shoot();
+
 
             }
 
-
+            
         }
     }
 
@@ -78,7 +83,12 @@ public class Turret : MonoBehaviour
         {
             return true;
         }
-        return false;
+        else
+        {
+            ResetTimer();
+            return false;
+        }
+        //return false;
     }
 
     /// <summary>
@@ -99,20 +109,47 @@ public class Turret : MonoBehaviour
         {
             if (rayhit.collider.CompareTag("Player"))
             {
+
                 Debug.Log("Rays hit!");
                 return true;
             }
 
-
         }
+        
         return false;
     }
 
 
-
+    /// <summary>
+    /// Turret Shooting Method, this will instantiate a bullet on the POS of the object
+    /// </summary>
     public void Shoot()
     {
         Transform _Bullet = Instantiate(bullet.transform, transform.position, Quaternion.identity);
         _Bullet.transform.rotation = turret.transform.rotation;
     }
+
+
+    bool TimerBeforeShoot()
+    {
+        timer -= Time.deltaTime * 1;
+
+        if (timer <= 0)
+        {
+            
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+
+    }
+
+   void ResetTimer()
+   {
+        timer = aiTimeToShoot;
+   }
+
+
 }

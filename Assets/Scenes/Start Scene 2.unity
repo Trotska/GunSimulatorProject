@@ -8064,6 +8064,7 @@ GameObject:
   - component: {fileID: 421137073}
   - component: {fileID: 421137072}
   - component: {fileID: 421137071}
+  - component: {fileID: 421137076}
   m_Layer: 0
   m_Name: Bullet_Turret
   m_TagString: Untagged
@@ -8163,6 +8164,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &421137076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 421137070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e02ef52c6f2b15a488226f8a45e87999, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 100
 --- !u!43 &467814740
 Mesh:
   m_ObjectHideFlags: 0
@@ -8377,9 +8391,10 @@ MonoBehaviour:
   target: {fileID: 156884977}
   firingPoint: {fileID: 0}
   castPoint: {fileID: 1331246257}
-  aiRange: 5
+  aiRange: 10
+  aiTimeToShoot: 5
   turret: {fileID: 474802497}
-  bullet: {fileID: 0}
+  bullet: {fileID: 421137070}
   fireTimer: 0
 --- !u!65 &474802500
 BoxCollider:
