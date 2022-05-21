@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public int points = 0;
-    public int pointslost = 0;
+    public int points;
+    public int pointslost;
 
     //Text variables
     public Text PointsGained;
