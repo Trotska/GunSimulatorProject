@@ -13,6 +13,7 @@ public class DeployUi : MonoBehaviour
     void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
+        
     }
 
     // Update is called once per frame
