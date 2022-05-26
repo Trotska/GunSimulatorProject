@@ -6,7 +6,7 @@ public class Turret : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    public GameObject target;
+   public PlayerTarget target;
     private bool targetLocked;
     public GameObject firingPoint;
 
@@ -19,6 +19,7 @@ public class Turret : MonoBehaviour
     public GameObject turret;
     public GameObject bullet;
     public float fireTimer;
+    public float fireTest;
     private bool shotready;
 
 
@@ -27,6 +28,8 @@ public class Turret : MonoBehaviour
     void Start()
     {
         timer = aiTimeToShoot;
+        target = FindObjectOfType<PlayerTarget>();
+        fireTest = fireTimer;
     }
 
     // Update is called once per frame
@@ -37,10 +40,10 @@ public class Turret : MonoBehaviour
             turret.transform.LookAt(target.transform);
             turret.transform.Rotate(0, -90, 0);
 
-            if (shotready)
-            {
-                Shoot();
-            }
+            //if (shotready)
+            //{
+            //    Shoot();
+            //}
 
         }
 
@@ -52,25 +55,28 @@ public class Turret : MonoBehaviour
 
                 Debug.Log("i seee you!");
                 turret.transform.LookAt(target.transform);
-                if (TimerBeforeShoot())
+                
+
+                fireTest -= 1 * Time.deltaTime;
+                if (TimerBeforeShoot() && fireTimer >= 0)
+                {
                     Shoot();
+                    fireTest = fireTimer;
+                }
+                    
 
 
             }
-
+ 
             
+        }
+        else
+        {
+            ResetTimer();
         }
     }
 
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    if (other.CompareTag("Player"))
-    //    {
-    //        target = other.gameObject; 
-    //        targetLocked = true;
-    //    }
 
-    //}
 
     /// <summary>
     /// if the player is within the given distance
@@ -125,8 +131,15 @@ public class Turret : MonoBehaviour
     /// </summary>
     public void Shoot()
     {
-        Transform _Bullet = Instantiate(bullet.transform, transform.position, Quaternion.identity);
-        _Bullet.transform.rotation = turret.transform.rotation;
+        
+       
+            Transform _Bullet = Instantiate(bullet.transform, transform.position, Quaternion.identity);
+            _Bullet.transform.rotation = turret.transform.rotation;
+            
+        
+        
+        //Transform _Bullet = Instantiate(bullet.transform, transform.position, Quaternion.identity);
+        //_Bullet.transform.rotation = turret.transform.rotation;
     }
 
 
