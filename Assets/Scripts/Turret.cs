@@ -55,14 +55,9 @@ public class Turret : MonoBehaviour
 
                 Debug.Log("i seee you!");
                 turret.transform.LookAt(target.transform);
-                
 
-                fireTest -= 1 * Time.deltaTime;
-                if (TimerBeforeShoot() && fireTimer >= 0)
-                {
-                    Shoot();
-                    fireTest = fireTimer;
-                }
+
+                Shoot();
                     
 
 
@@ -131,10 +126,16 @@ public class Turret : MonoBehaviour
     /// </summary>
     public void Shoot()
     {
-        
-       
+
+        fireTest -= 1 * Time.deltaTime;
+        if (TimerBeforeShoot() && fireTimer >= 0)
+        {
             Transform _Bullet = Instantiate(bullet.transform, transform.position, Quaternion.identity);
             _Bullet.transform.rotation = turret.transform.rotation;
+            fireTest = fireTimer;
+            ResetTimer();
+        }
+
             
         
         
