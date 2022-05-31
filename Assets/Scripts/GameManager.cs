@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
 
    public bool IsSimulationEnd()
    {
-        if (points >= 8800)
+        if (points >= 8800 || timeRemaining <= 0)
         {
             return true;
         }
