@@ -30,9 +30,10 @@ public class DeployUi : MonoBehaviour
     /// </summary>
    public void DisplayResults()
     {
-        Instantiate(SimulationResults, gameObject.transform.forward, gameObject.transform.rotation);
+        //Instantiate(SimulationResults, gameObject.transform.forward, gameObject.transform.rotation);
         if (PositionIsSet == false)
         {
+            Instantiate(SimulationResults, gameObject.transform.forward, gameObject.transform.rotation);
             SetPosition();
             PositionIsSet = true;
         }

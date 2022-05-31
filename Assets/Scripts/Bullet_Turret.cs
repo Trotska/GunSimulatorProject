@@ -5,7 +5,7 @@ using UnityEngine;
 public class Bullet_Turret : MonoBehaviour
 {
 
-    public float moveSpeed = 100.0f;
+    public float moveSpeed = 75.0f;
     public float lifeTime = 3;
     // Start is called before the first frame update
     void Start()

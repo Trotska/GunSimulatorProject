@@ -38,7 +38,11 @@ public class GameManager : MonoBehaviour
         PointsGained.text = points.ToString();
         PointsLost.text = pointslost.ToString();
         TimeRemaining.text = timeRemaining.ToString();
-        Timer();
+        if (points > 100)
+        {
+            Timer();
+        }
+        //Timer();
     }
 
    public bool IsSimulationEnd()

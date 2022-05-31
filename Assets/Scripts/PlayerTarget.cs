@@ -21,7 +21,7 @@ public class PlayerTarget : MonoBehaviour
 
     public void TakeDamage()
     {
-        HealthPoints -= 1;
+        HealthPoints -= 25;
     }
 
     public void Death()
