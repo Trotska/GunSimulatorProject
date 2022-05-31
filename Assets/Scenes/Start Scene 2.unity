@@ -93522,6 +93522,11 @@ PrefabInstance:
       propertyPath: RecoilForce.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4197581081067112715, guid: 53eb7677fc0838b479540cd65922a5d7,
+        type: 3}
+      propertyPath: RecoilDuration
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 4300801220573481784, guid: 53eb7677fc0838b479540cd65922a5d7,
         type: 3}
       propertyPath: m_PresetInfoIsWorld
