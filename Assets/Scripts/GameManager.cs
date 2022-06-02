@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -24,6 +25,16 @@ public class GameManager : MonoBehaviour
 
     //Menu Variables
     public Canvas SimulationCanvas;
+    public bool ResetData = true;
+
+
+    public static GameManager Instance;
+
+    private void Awake()
+    {
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -43,6 +54,12 @@ public class GameManager : MonoBehaviour
             Timer();
         }
         //Timer();
+
+        if (IsSimulationEnd())
+        {
+
+        }
+
     }
 
    public bool IsSimulationEnd()
@@ -68,4 +85,16 @@ public class GameManager : MonoBehaviour
 
    }
 
+    void ResetScene()
+    {
+        timeRemaining = 300;
+        points = 0;
+    }
+
+
+    void EndScene()
+    {
+        Debug.Log("Scene has been loaded");
+        SceneManager.LoadScene("End Scene");
+    }
 }
