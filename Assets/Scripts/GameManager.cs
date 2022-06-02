@@ -17,15 +17,15 @@ public class GameManager : MonoBehaviour
     //Total:88
 
     //Text variables
-    public Text PointsGained;
-    public Text PointsLost;
-    public Text Accuracy;
-    public Text TotalScore;
+    //public Text PointsGained;
+    //public Text PointsLost;
+    //public Text Accuracy;
+    //public Text TotalScore;
     public Text TimeRemaining;
 
     //Menu Variables
     public Canvas SimulationCanvas;
-    public bool ResetData = true;
+    public bool ResetData = false;
 
 
     public static GameManager Instance;
@@ -41,13 +41,16 @@ public class GameManager : MonoBehaviour
     {
         //Start the timer
         timerIsRunning = true;
+        //PointsGained = GameObject.Find("Points Gained Results").GetComponent<Text>();
+        //PointsLost = GameObject.Find("PointsLostResults").GetComponent<Text>();
+        //TotalScore = GameObject.Find("Total Score Results").GetComponent<Text>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        PointsGained.text = points.ToString();
-        PointsLost.text = pointslost.ToString();
+        //PointsGained.text = points.ToString();
+        //PointsLost.text = pointslost.ToString();
         TimeRemaining.text = timeRemaining.ToString();
         if (points > 100)
         {
@@ -55,9 +58,19 @@ public class GameManager : MonoBehaviour
         }
         //Timer();
 
-        if (IsSimulationEnd())
+        if (IsSimulationEnd() && ResetData == false)
         {
+            //ResetData = true;
+            EndScene();
 
+            //PointsGained.text = null;
+            //PointsLost.text = null;
+            //TotalScore.text = null;
+
+            //PointsGained = GameObject.Find("Points Gained Results").GetComponent<Text>();
+            //PointsLost = GameObject.Find("PointsLostResults").GetComponent<Text>();
+            //TotalScore = GameObject.Find("Total Score Results").GetComponent<Text>();
+            ResetData = true;
         }
 
     }
@@ -96,5 +109,8 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("Scene has been loaded");
         SceneManager.LoadScene("End Scene");
+        //PointsGained = GameObject.Find("Points Gained Results").GetComponent<Text>();
+        //PointsLost = GameObject.Find("PointsLostResults").GetComponent<Text>();
+        //TotalScore = GameObject.Find("Total Score Results").GetComponent<Text>();
     }
 }

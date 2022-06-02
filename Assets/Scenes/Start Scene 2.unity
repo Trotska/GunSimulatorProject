@@ -10607,7 +10607,7 @@ MeshRenderer:
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
   m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
+  m_SelectedEditorRenderState: 2
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -32990,7 +32990,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh34676
+  m_Name: pb_Mesh34812
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -41028,10 +41028,10 @@ MonoBehaviour:
   PointsGained: {fileID: 1855518264}
   PointsLost: {fileID: 524168950}
   Accuracy: {fileID: 0}
-  TotalScore: {fileID: 0}
+  TotalScore: {fileID: 1127595438}
   TimeRemaining: {fileID: 226627730}
   SimulationCanvas: {fileID: 0}
-  ResetData: 1
+  ResetData: 0
 --- !u!4 &999435019
 Transform:
   m_ObjectHideFlags: 0
@@ -41450,26 +41450,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!1 &1014629292 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2683195716791022644, guid: 4ac7df741a9c0a2418ec19477729ee3d,
-    type: 3}
-  m_PrefabInstance: {fileID: 2006707106}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1014629296
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1014629292}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61fb47851f224c34f90bf2625c72ac7b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
-  SceneLoaded: 0
 --- !u!1001 &1015632585
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -84491,7 +84471,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh33248
+  m_Name: pb_Mesh33260
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
