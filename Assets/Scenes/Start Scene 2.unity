@@ -33154,7 +33154,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-27262
+  m_Name: pb_Mesh-27260
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -41025,10 +41025,6 @@ MonoBehaviour:
   pointslost: 0
   timeRemaining: 3
   timerIsRunning: 0
-  PointsGained: {fileID: 1855518264}
-  PointsLost: {fileID: 524168950}
-  Accuracy: {fileID: 0}
-  TotalScore: {fileID: 1127595438}
   TimeRemaining: {fileID: 226627730}
   SimulationCanvas: {fileID: 0}
   ResetData: 0
@@ -83733,7 +83729,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-16324
+  m_Name: pb_Mesh-16322
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -87613,6 +87609,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: 1x0.5 Wall_X (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 563691235614831339, guid: aec3128b30a700c4a8ed886ded3228bc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2666858619525669167, guid: aec3128b30a700c4a8ed886ded3228bc,
         type: 3}
@@ -92450,6 +92451,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: 6x0.5_X Wall (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8126499669505468737, guid: 56e949cd240ca194eb89ca66caa6cdd8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8126499669505468737, guid: 56e949cd240ca194eb89ca66caa6cdd8,
         type: 3}
