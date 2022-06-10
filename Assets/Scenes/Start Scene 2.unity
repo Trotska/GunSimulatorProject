@@ -41021,9 +41021,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fdfb98fb4ffaac4dbfccdb74bd4fcca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  points: 200
+  points: 0
   pointslost: 0
-  timeRemaining: 3
+  timeRemaining: 300
   timerIsRunning: 0
   TimeRemaining: {fileID: 226627730}
   SimulationCanvas: {fileID: 0}
